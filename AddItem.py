@@ -6,7 +6,7 @@ def AddItem():
         cursor.execute("INSERT INTO `member` (itemcode, lastname, status, itemprice, itemquantity, stockarrivaldate, minimumorder, maximumorder) VALUES(?, ?, ?, ?, ?, ?, ?, ?)", (str(ITEMCODE.get()), str(LASTNAME.get()), str(STATUS.get()), str(ITEMPRICE.get()), str(ITEMQUANTITY.get()), str(STOCKARRIVALDATE.get()), str(MINIMUMORDER.get()), str(MAXIMUMORDER.get())))
         tree.delete(*tree.get_children())
         tree.delete(*tree.get_children())
-        cursor.execute("SELECT * FROM `member` ORDER BY `lastname` ASC")
+        cursor.execute("SELECT * FROM `member` ORDER BY `lastname` ASC")   
         fetch = cursor.fetchall()
         for data in fetch:
             tree.insert('', 'end', values=(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8]))
